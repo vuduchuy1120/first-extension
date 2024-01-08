@@ -24,12 +24,7 @@
       "128": "images/fa-icon-128.png"
     }
   },
-  "host_permissions": [
-    "https://fap.fpt.edu.vn/*",
-    "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&access_type=offline&redirect_uri=https%3A%2F%2Ffap.fpt.edu.vn%2FDefault.aspx&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&client_id=183063314780-ohah9pn8fjnt1tb2tlc9u5o9337t6pf3.apps.googleusercontent.com&service=lso&o2v=1&theme=glif&flowName=GeneralOAuthFlow",
-    "https://accounts.google.com/gsi/select?client_id=652923540545-ofcv5tmdn8kjiqfbnl2qf39fi6vdutfq.apps.googleusercontent.com&ux_mode=popup&ui_mode=card&as=qxEwdRhIbExoZ7c3dkgpzQ&channel_id=a5ea005f765352354abd925c8a2d8fd797f1bcc36db4adc97a219447500e2d1c&origin=https%3A%2F%2Ffu-edunext.fpt.edu.vn",
-    "https://fu-edunext.fpt.edu.vn/login"
-  ],
+
   "content_scripts": [
     {
       "matches": [
@@ -37,15 +32,27 @@
       ],
       "js": [
         "scripts/content.js"
-      ]
+      ],
+      "world":"MAIN"
     },
     {
       "matches": [
-        "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&access_type=offline&redirect_uri=https%3A%2F%2Ffap.fpt.edu.vn%2FDefault.aspx&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&client_id=183063314780-ohah9pn8fjnt1tb2tlc9u5o9337t6pf3.apps.googleusercontent.com&service=lso&o2v=1&theme=glif&flowName=GeneralOAuthFlow"        
+        "https://accounts.google.com/o/oauth2/auth/*fap.fpt.edu.vn*" ,
+        "https://accounts.google.com/o/oauth2/*.fpt.edu.vn*"         
       ],
       "js": [
         "scripts/emailLogin.js"
       ]
+    },
+    {
+      "matches": [
+        "https://cmshn.fpt.edu.vn/*"
+      ],
+      "js": [
+        "scripts/cmsLogin.js"
+      ],
+      "world":"MAIN"
     }
+
   ]
 }

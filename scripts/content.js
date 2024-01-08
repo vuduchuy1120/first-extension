@@ -26,4 +26,4 @@ function Login() {
   loginButton.click();
 }
 
-Login() ;
+Login();
